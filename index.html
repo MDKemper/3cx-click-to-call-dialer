@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>3CX Click-to-Call Dialer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body style="font-family: sans-serif; text-align: center; margin-top: 50px;">
+  <h1>📞 3CX Click-to-Call Dialer</h1>
+  <input type="text" id="phoneNumber" placeholder="Enter phone number" style="font-size: 1.2em; padding: 10px; width: 250px;"><br><br>
+  <button onclick="clickToCall()" style="font-size: 1.2em; padding: 10px 20px;">Call Now</button>
+
+  <script>
+    function clickToCall() {
+      const phone = document.getElementById('phoneNumber').value;
+      const fqdn = "your3cxfqdn.com"; // Replace with your 3CX FQDN
+      const callUrl = `https://${fqdn}:5001/#/call/${encodeURIComponent(phone)}`;
+      window.open(callUrl, '_blank');
+    }
+  </script>
+</body>
+</html>
+
+
+Add initial dialer HTML
